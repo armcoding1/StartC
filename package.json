@@ -1,0 +1,50 @@
+{
+    "name": "StartC",
+    "displayName": "Start C",
+    "publisher": "ZyntraxCorp",
+    "icon": "images/icon.png",
+    "description": "This project is a Visual Studio Code extension that automatically inserts a C code template based on the entered abbreviation. When keywords like \"io\", \"arr\", \"mem\", and others are typed, the extension replaces the document content with the corresponding template, including necessary standard libraries for each task (I/O, arrays, memory, math, files, etc.).",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.98.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "workspaceContains:**/*.cpp",
+        "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "StartC.helloWorld",
+                "title": "Hello World"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src",
+        "test": "vscode-test"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.98.0",
+        "@types/mocha": "^10.0.10",
+        "@types/node": "20.x",
+        "@typescript-eslint/eslint-plugin": "^8.28.0",
+        "@typescript-eslint/parser": "^8.28.0",
+        "eslint": "^9.23.0",
+        "typescript": "^5.8.2",
+        "@vscode/test-cli": "^0.0.10",
+        "@vscode/test-electron": "^2.4.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/armcoding1/StartC"
+    }
+}
